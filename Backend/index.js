@@ -11,6 +11,14 @@ const app = express();
 app.use(cors({
     origin:["https://book-sales-app-teal.vercel.app/BookClub"]
 }));
+
+app.use(cors({
+    origin: 'https://akashsinghbookstore.netlify.app', // allow your frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],          // adjust as needed
+    credentials: true                                    // if you're using cookies/auth
+  }));
+  app.use(cors()); // Allows *all* origins (not safe for production)
+
 app.use(express.json());
 
 dotenv.config();
