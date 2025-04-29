@@ -8,7 +8,9 @@ import contactRoute from "./route/contect.route.js";  // Typo in 'contact' vs 'c
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin:["https://book-sales-app-teal.vercel.app/BookClub"]
+}));
 app.use(express.json());
 
 dotenv.config();
