@@ -33,7 +33,12 @@ try {
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
 app.use("/contect", contactRoute);  // Ensure the correct spelling 'contact'
-
+app.get('/',(req,res)=>{
+    res.send({
+        activeStatus:true,
+        error:false,
+    })
+})
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
